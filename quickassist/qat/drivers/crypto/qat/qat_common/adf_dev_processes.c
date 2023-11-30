@@ -83,7 +83,7 @@ static int adf_chr_drv_create(void)
 	}
 
 	adf_processes_drv_info.drv_class =
-		class_create(THIS_MODULE, ADF_DEV_PROCESSES_NAME);
+		class_create(ADF_DEV_PROCESSES_NAME);
 	if (IS_ERR(adf_processes_drv_info.drv_class)) {
 		pr_err("QAT: class_create failed for adf_ctl\n");
 		goto err_chrdev_unreg;
