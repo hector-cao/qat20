@@ -114,7 +114,7 @@ static int qdm_iommu_mem_map(dma_addr_t *iova, phys_addr_t paddr, size_t size)
 		return 0;
 
 	return iommu_map(domain, *iova, paddr, size,
-			IOMMU_READ | IOMMU_WRITE | IOMMU_CACHE);
+			 IOMMU_READ | IOMMU_WRITE | IOMMU_CACHE, GFP_KERNEL);
 }
 
 /**
