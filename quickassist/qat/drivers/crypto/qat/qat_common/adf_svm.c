@@ -184,12 +184,12 @@ bool adf_svm_get_dev_capability(struct adf_accel_dev *accel_dev)
 #if (KERNEL_VERSION(5, 12, 0) <= LINUX_VERSION_CODE)
 	const struct iommu_ops *ops = GET_DEV(accel_dev).bus->iommu_ops;
 
-	if (!ops || !ops->dev_has_feat)
+	if (!ops || !ops->dev_enable_feat)
 		return false;
 
-	return ops->dev_has_feat(&GET_DEV(accel_dev), IOMMU_DEV_FEAT_SVA);
+	return ops->dev_enable_feat(&GET_DEV(accel_dev), IOMMU_DEV_FEAT_SVA);
 #elif (KERNEL_VERSION(5, 7, 0) <= LINUX_VERSION_CODE)
-	return iommu_dev_has_feature(&GET_DEV(accel_dev), IOMMU_DEV_FEAT_SVA);
+	return iommu_dev_enable_feature(&GET_DEV(accel_dev), IOMMU_DEV_FEAT_SVA);
 #elif (KERNEL_VERSION(5, 4, 0) <= LINUX_VERSION_CODE)
 	return intel_svm_available(&GET_DEV(accel_dev));
 #else
