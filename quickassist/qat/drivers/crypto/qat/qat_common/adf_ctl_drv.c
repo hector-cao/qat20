@@ -943,5 +943,5 @@ module_exit(adf_unregister_ctl_device_driver);
 MODULE_LICENSE("Dual BSD/GPL");
 MODULE_AUTHOR("Intel");
 MODULE_DESCRIPTION("Intel(R) QuickAssist Technology");
-MODULE_ALIAS_CRYPTO("intel_qat");
+MODULE_ALIAS("intel_qat");
 MODULE_VERSION(ADF_DRV_VERSION);
