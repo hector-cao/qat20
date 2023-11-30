@@ -582,7 +582,7 @@ static int adf_4xxx_sysfs_create(struct device *dev)
 static void adf_4xxx_sysfs_delete(struct device *dev)
 {
 #ifndef QAT_ESXI
-	devm_device_remove_group(dev, &tl_sysfs_group);
+	device_remove_group(dev, &tl_sysfs_group);
 #endif /* QAT_ESXI */
 }
 
