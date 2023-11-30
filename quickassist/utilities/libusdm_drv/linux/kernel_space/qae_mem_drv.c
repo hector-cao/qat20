@@ -824,7 +824,7 @@ dev_get_user_page(struct file *fp, uint32_t cmd, unsigned long arg)
     {
        if (PageHuge(page))
        {
-           if (user_mem_info.size != PMD_PAGE_SIZE)
+           if (user_mem_info.size != PMD_SIZE)
            {
                mm_err("%s:%d dev_get_user_page: user_mem_info.size is not "
                       "equal to hugepage_size, ret=%d\n",
