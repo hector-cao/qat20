@@ -60,7 +60,7 @@ static struct adf_chr_drv_info adf_processes_drv_info = {
 };
 
 static LIST_HEAD(processes_list);
-static DEFINE_SEMAPHORE(processes_list_sema);
+static DEFINE_SEMAPHORE(processes_list_sema, 1);
 
 static void adf_chr_drv_destroy(void)
 {
