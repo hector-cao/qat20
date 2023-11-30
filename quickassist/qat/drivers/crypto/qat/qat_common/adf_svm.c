@@ -9,7 +9,7 @@
 #include "adf_cfg.h"
 #endif
 #if (KERNEL_VERSION(5, 4, 0) <= LINUX_VERSION_CODE)
-#include <linux/intel-svm.h>
+//#include <linux/intel-svm.h>
 #endif
 #if (KERNEL_VERSION(5, 7, 0) <= LINUX_VERSION_CODE)
 #include <linux/iommu.h>
