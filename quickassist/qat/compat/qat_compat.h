@@ -512,8 +512,8 @@ static inline void pci_ignore_hotplug(struct pci_dev *dev)
 #define iommu_unmap(domain, iova, size) \
 	iommu_unmap(domain, iova, get_order(size))
 #else
-#define iommu_map(domain, iova, paddr, size, flags) \
-	iommu_map(domain, iova, paddr, size, flags)
+#define iommu_map(domain, iova, paddr, size, flags, gfp)	\
+  iommu_map(domain, iova, paddr, size, flags, gfp)
 #define iommu_unmap(domain, iova, size) \
 	iommu_unmap(domain, iova, size)
 #endif
