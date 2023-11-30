@@ -200,7 +200,7 @@ static int adf_dev_attach_pasid(struct adf_accel_dev *accel_dev,
 	    !pasid_ctx)
 		return -EINVAL;
 
-	pasid_handle = iommu_sva_bind_device(&pdev->dev, current->mm, NULL);
+	pasid_handle = iommu_sva_bind_device(&pdev->dev, current->mm);
 	if (IS_ERR(pasid_handle)) {
 		dev_err(&GET_DEV(accel_dev),
 			"Failed to bind the current process to a PASID!\n");
