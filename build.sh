@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install pkg-config \
+sudo apt install -y pkg-config \
      zlib1g-dev \
      libboost-dev \
      libboost-regex-dev \
