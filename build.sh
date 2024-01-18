@@ -5,10 +5,18 @@ sudo apt install -y pkg-config \
      libboost-dev \
      libboost-regex-dev \
      libudev-dev \
-     yasm
+     yasm \
+     build-essential
+
+# install kernel sources
+sudo apt install linux-headers-$(uname -r)
 
 ./configure
-make
+
+# make
+
+# only make adf
+make adf-ctl-all
 
 #sudo make install
 
